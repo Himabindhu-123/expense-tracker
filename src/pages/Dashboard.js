@@ -17,7 +17,9 @@ return (
 
 <div className="min-h-screen bg-gradient-to-r from-blue-100 to-purple-100 p-8">
 
-<h1 className="text-4xl font-bold text-center mb-10">
+<h1 className="text-2xl
+
+lg:text-4xl font-bold text-center mb-10">
 
 💰 Expense Tracker
 
@@ -25,7 +27,11 @@ return (
 
 
 
-<div className="flex gap-8 max-w-7xl mx-auto">
+<div
+
+className=
+
+"flex flex-col lg:flex-row gap-8 ">
 
 
 <div className="bg-white p-8 rounded-3xl shadow-2xl flex-1">
@@ -45,7 +51,9 @@ setExpense={setExpense}
 
 
 
-<div className="bg-white p-8 rounded-3xl shadow-2xl w-[400px] h-fit">
+<div className="bg-white p-8 rounded-3xl shadow-2xl w-full
+
+lg:w-[400px] h-fit">
 
 <Charts
 

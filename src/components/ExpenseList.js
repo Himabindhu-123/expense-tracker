@@ -108,6 +108,55 @@ setExpense
     totalIncome -
     totalExpense;
 
+  const monthlyData = {};
+
+data.forEach(
+
+(item)=>{
+const month =
+
+item.month ||
+
+new Date(
+
+item.createdAt.seconds
+*1000
+
+)
+
+.toLocaleString(
+
+"default",
+
+{
+
+month:"long"
+
+}
+
+);
+
+
+monthlyData[month] =
+
+(
+
+monthlyData[month]
+
+||
+
+0
+
+)
+
++
+
+item.amount;
+
+}
+
+);
+
     useEffect(()=>{
 
 setIncome(
@@ -350,9 +399,11 @@ setSearch(e.target.value)
 
 />
 
+<div className="flex gap-4 mb-4">
+
 <select
 
-className="border p-2 rounded mb-4"
+className="border p-2 rounded"
 
 onChange={(e)=>
 
@@ -366,37 +417,19 @@ e.target.value
 
 >
 
-<option>
+<option>All</option>
 
-All
+<option>Food</option>
 
-</option>
+<option>Travel</option>
 
-<option>
+<option>Salary</option>
 
-Food
-
-</option>
-
-<option>
-
-Travel
-
-</option>
-
-<option>
-
-Salary
-
-</option>
-
-<option>
-
-Shopping
-
-</option>
+<option>Shopping</option>
 
 </select>
+
+
 
 <button
 
@@ -410,6 +443,62 @@ Export CSV
 
 </button>
 
+
+</div>
+
+<div className="bg-white p-4 rounded-xl shadow mb-6">
+
+<h2 className="text-xl font-bold mb-3">
+
+Monthly Report
+
+</h2>
+
+
+{
+
+Object.entries(
+
+monthlyData
+
+)
+
+.map(
+
+([month,total])=>(
+
+<div
+
+key={month}
+
+className="flex justify-between border-b py-2"
+
+>
+
+<span>
+
+{month}
+
+</span>
+
+
+<span>
+
+₹{total}
+
+</span>
+
+
+</div>
+
+)
+
+)
+
+}
+
+
+</div>
       <h2 className="text-2xl font-bold mt-6">
 
         Transactions

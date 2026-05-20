@@ -17,6 +17,8 @@ function AddExpense(){
 
 const [category, setCategory] = useState("");
 
+const [budget,setBudget]=useState("");
+
  const handleSubmit=async()=>{
 
    if(!amount){
@@ -27,19 +29,60 @@ const [category, setCategory] = useState("");
 
    }
 
-   await addDoc(
+   if(
 
-collection(db,"transactions"),
+Number(amount)
+
+>
+
+Number(budget)
+
+){
+
+alert(
+
+" ⚠️ Budget exceeded"
+
+);
+
+}
+
+await addDoc(
+
+collection(
+db,
+"transactions"
+),
 
 {
 
-amount:Number(amount),
+type,
 
-type:type,
+amount:
+Number(amount),
 
-category:category,
+category,
 
-createdAt:new Date()
+
+month:
+
+new Date()
+
+.toLocaleString(
+
+"default",
+
+{
+
+month:"long"
+
+}
+
+),
+
+createdAt:
+
+new Date()
 
 }
 
@@ -51,6 +94,25 @@ createdAt:new Date()
 
  };
 
+  <input
+
+placeholder="Set Budget"
+
+className="w-full p-3 border rounded-xl"
+
+value={budget}
+
+onChange={(e)=>
+
+setBudget(
+
+e.target.value
+
+)
+
+}
+
+/>
 
  return(
 
