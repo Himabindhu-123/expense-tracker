@@ -3,6 +3,21 @@ import React, { useState } from "react";
 import AddExpense from "../components/AddExpense";
 import ExpenseList from "../components/ExpenseList";
 import Charts from "../components/Charts";
+import {
+
+signOut
+
+}
+
+from "firebase/auth";
+
+import {
+
+auth
+
+}
+
+from "../firebase/firebase";
 
 function Dashboard() {
 
@@ -15,7 +30,33 @@ useState(0);
 
 return (
 
+
+
 <div className="min-h-screen bg-gradient-to-r from-blue-100 to-purple-100 p-8">
+
+<div className="flex justify-end mb-4">
+
+<button
+
+onClick={()=>
+
+signOut(
+
+auth
+
+)
+
+}
+
+className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+
+>
+
+Logout
+
+</button>
+
+</div>
 
 <h1 className="text-2xl
 

@@ -3,63 +3,96 @@ import React, { useState } from "react";
 import { db } from "../firebase/firebase";
 
 import {
- collection,
- addDoc
+
+collection,
+addDoc
+
 }
+
 from "firebase/firestore";
 
 
 function AddExpense(){
 
- const [amount,setAmount]=useState("");
+const [
 
- const [type,setType]=useState("Expense");
+amount,
 
-const [category, setCategory] = useState("");
+setAmount
 
-const [budget,setBudget]=useState("");
+]=
 
- const handleSubmit=async()=>{
+useState("");
 
-   if(!amount){
 
-    alert("Enter amount");
+const [
 
-    return;
+type,
 
-   }
+setType
 
-   if(
+]=
 
-Number(amount)
+useState("Expense");
 
->
 
-Number(budget)
+const [
+
+category,
+
+setCategory
+
+]=
+
+useState("");
+
+
+
+const handleSubmit =
+
+async()=>{
+
+
+if(
+
+!amount
 
 ){
 
 alert(
 
-" ⚠️ Budget exceeded"
+"Enter amount"
 
 );
 
+return;
+
 }
+
 
 await addDoc(
 
 collection(
+
 db,
+
 "transactions"
+
 ),
 
 {
 
 type,
 
+
 amount:
-Number(amount),
+
+Number(
+
+amount
+
+),
+
 
 category,
 
@@ -74,11 +107,14 @@ new Date()
 
 {
 
-month:"long"
+month:
+
+"long"
 
 }
 
 ),
+
 
 createdAt:
 
@@ -88,37 +124,36 @@ new Date()
 
 );
 
-   alert("Saved!");
 
-   setAmount("");
 
- };
+alert(
 
-  <input
+"Saved!"
 
-placeholder="Set Budget"
+);
 
-className="w-full p-3 border rounded-xl"
 
-value={budget}
+setAmount("");
 
-onChange={(e)=>
+setCategory("");
 
-setBudget(
+window.location.reload();
 
-e.target.value
+};
 
-)
 
-}
-
-/>
-
- return(
+return(
 
 <div>
 
-<h2>Add Transaction</h2>
+
+<h2 className="text-2xl font-bold mb-4">
+
+Add Transaction
+
+</h2>
+
+
 
 <input
 
@@ -132,11 +167,16 @@ value={amount}
 
 onChange={(e)=>
 
-setAmount(e.target.value)
+setAmount(
+
+e.target.value
+
+)
 
 }
 
 />
+
 
 
 <select
@@ -147,7 +187,11 @@ value={type}
 
 onChange={(e)=>
 
-setType(e.target.value)
+setType(
+
+e.target.value
+
+)
 
 }
 
@@ -159,13 +203,18 @@ Income
 
 </option>
 
+
 <option>
 
 Expense
 
 </option>
 
+
 </select>
+
+
+
 
 <input
 
@@ -177,11 +226,16 @@ value={category}
 
 onChange={(e)=>
 
-setCategory(e.target.value)
+setCategory(
+
+e.target.value
+
+)
 
 }
 
 />
+
 
 
 <button
@@ -196,9 +250,10 @@ Add Transaction
 
 </button>
 
+
 </div>
 
- )
+);
 
 }
 

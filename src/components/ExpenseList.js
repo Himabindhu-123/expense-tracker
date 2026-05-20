@@ -16,7 +16,9 @@ function ExpenseList({
 
 setIncome,
 
-setExpense
+setExpense,
+
+showTransactions = true
 
 }){
 
@@ -499,123 +501,128 @@ className="flex justify-between border-b py-2"
 
 
 </div>
-      <h2 className="text-2xl font-bold mt-6">
-
-        Transactions
-
-      </h2>
-
-
-
       {
 
-        data
+showTransactions && (
 
-            .filter(
+<>
 
-            item=>
+<h2 className="text-2xl font-bold mt-6">
 
-            item.category
+Transactions
 
-            ?.toLowerCase()
-
-            .includes(
-
-            search.toLowerCase()
-
-            )
-
-            )
-
-            .map(
-
-          (item) => (
-
-            <div
-
-              key={item.id}
-
-              className="bg-gray-100 rounded-xl p-4 flex justify-between mt-3 shadow"
-
-            >
+</h2>
 
 
-              <div>
+{
 
-                <p className="font-semibold">
+data
 
-                  {item.type}
+.filter(
 
-                </p>
+item=>
 
+item.category
 
-                <p className="text-sm text-gray-500">
+?.toLowerCase()
 
-                  {item.category}
+.includes(
 
-                </p>
+search.toLowerCase()
 
-              </div>
+)
 
+)
 
+.map(
 
+(item)=>(
 
-              <div className="flex items-center gap-3">
+<div
 
+key={item.id}
 
-                <span
+className="bg-gray-100 rounded-xl p-4 flex justify-between mt-3 shadow"
 
-                  className={
+>
 
-                    item.type === "Income"
+<div>
 
-                      ?
+<p className="font-semibold">
 
-                      "text-green-600 font-bold"
+{item.type}
 
-                      :
+</p>
 
-                      "text-red-600 font-bold"
+<p className="text-sm text-gray-500">
 
-                  }
+{item.category}
 
-                >
+</p>
 
-                  ₹{item.amount}
-
-                </span>
-
-
-
-
-                <button
-
-                  onClick={() =>
-                    handleDelete(
-                      item.id
-                    )
-                  }
-
-                  className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-
-                >
-
-                  Delete
-
-                </button>
+</div>
 
 
-              </div>
+<div className="flex items-center gap-3">
+
+<span
+
+className={
+
+item.type==="Income"
+
+?
+
+"text-green-600 font-bold"
+
+:
+
+"text-red-600 font-bold"
+
+}
+
+>
+
+₹{item.amount}
+
+</span>
 
 
+<button
 
-            </div>
+onClick={()=>
 
-          )
+handleDelete(
 
-        )
+item.id
 
-      }
+)
+
+}
+
+className="bg-red-500 text-white px-3 py-1 rounded"
+
+>
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+)
+
+)
+
+}
+
+</>
+
+)
+
+}
 
 
     </div>
