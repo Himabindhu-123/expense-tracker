@@ -39,19 +39,19 @@ It helps users track income, expenses, and view financial insights with visual a
 ## 🖼️ Screenshots
 
 ### Login Page
-![Login Page](./screenshots/Login.png)
+![Login Page](./screenshots/login.png)
 
 ### Dashboard
-![Dashboard](./screenshots/Dashboard.png)
+![Dashboard](./screenshots/dashboard.png)
 
 ### Add Transaction
-![Add Transaction](./screenshots/Add-Transactions.png)
+![Add Transaction](./screenshots/add-transaction.png)
 
 ### Transaction History
-![Transaction History](./screenshots/Transaction-History.png)
+![Transaction History](./screenshots/transaction-history.png)
 
 ### Chart
-![Chart](./screenshots/Chart.png)
+![Chart](./screenshots/chart.png)
 
 ### CSV Export
 ![CSV Export](./screenshots/csv.png)
