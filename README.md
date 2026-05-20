@@ -34,6 +34,27 @@ It helps users track income, expenses, and view financial insights with visual a
 - **Authentication:** Firebase Auth
 - **Deployment:** Vercel / Netlify
 
+---
+
+## 🖼️ Screenshots
+
+### Login Page
+![Login Page](./screenshots/Login.png)
+
+### Dashboard
+![Dashboard](./screenshots/Dashboard.png)
+
+### Add Transaction
+![Add Transaction](./screenshots/Add-Transactions.png)
+
+### Transaction History
+![Transaction History](./screenshots/Transaction-History.png)
+
+### Chart
+![Chart](./screenshots/Chart.png)
+
+### CSV Export
+![CSV Export](./screenshots/csv.png)
 
 
 ## 📊 Key Highlights
