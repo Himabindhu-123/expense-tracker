@@ -56,6 +56,7 @@ It helps users track income, expenses, and view financial insights with visual a
 ### 🧾CSV Export
 ![CSV Export](./screenshots/csv.png)
 
+---
 
 ## 📊 Key Highlights
 
