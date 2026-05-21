@@ -32,7 +32,6 @@ It helps users track income, expenses, and view financial insights with visual a
 - **Database:** Firestore
 - **Charts:** Chart.js / react-chartjs-2
 - **Authentication:** Firebase Auth
-- **Deployment:** Vercel / Netlify
 
 ---
 
